@@ -4,7 +4,7 @@ import SwiftUI
 struct ChiefappApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          ChiefInjector.provideHomeView()
         }
     }
 }
