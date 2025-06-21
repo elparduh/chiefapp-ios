@@ -1,18 +1,17 @@
 import Foundation
 
 protocol DogsRepositoryProtocol {
-  var dogsRemoteDataSourceProtocol: DogsRemoteDataSourceProtocol { get }
-  func fetchDogs() async throws -> [DogApiResponse]
+  func fetchDogs() async throws -> [Dog]
 }
 
 struct DogsRepository: DogsRepositoryProtocol {
-  var dogsRemoteDataSourceProtocol: DogsRemoteDataSourceProtocol
-  
+  private let dogsRemoteDataSourceProtocol: DogsRemoteDataSourceProtocol
+
   init(dogsRemoteDataSourceProtocol: DogsRemoteDataSourceProtocol) {
     self.dogsRemoteDataSourceProtocol = dogsRemoteDataSourceProtocol
   }
   
-  func fetchDogs() async throws -> [DogApiResponse] {
-    try await dogsRemoteDataSourceProtocol.fetchDogs()
+  func fetchDogs() async throws -> [Dog] {
+    try await dogsRemoteDataSourceProtocol.fetchDogs().toDogList()
   }
 }
