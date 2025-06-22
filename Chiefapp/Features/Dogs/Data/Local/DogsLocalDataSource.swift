@@ -3,7 +3,7 @@ import CoreData
 
 protocol DogsLocalDataSourceProtocol {
   func saveDogs(_ dogs: [Dog]) async throws
-  func fetchDogs() async throws -> [Dog]
+  func getDogs() async throws -> [Dog]
   func clearDogs() async throws
 }
 
@@ -30,7 +30,7 @@ struct DogsLocalDataSource: DogsLocalDataSourceProtocol {
     }
   }
 
-  func fetchDogs() async throws -> [Dog] {
+  func getDogs() async throws -> [Dog] {
     try await managedContext.perform {
       let request: NSFetchRequest<DogEntity> = DogEntity.fetchRequest()
       let result = try managedContext.fetch(request)

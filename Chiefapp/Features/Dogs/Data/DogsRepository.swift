@@ -26,12 +26,16 @@ struct DogsRepository: DogsRepositoryProtocol {
       try await dogslocalDataSourceProtocol.saveDogs(remoteDogs)
       return .success(remoteDogs)
     } catch {
-      do {
-        let localDogs = try await dogslocalDataSourceProtocol.fetchDogs()
-        return .success(localDogs)
-      } catch {
-        return .failure(error)
-      }
+      return await getDogs()
+    }
+  }
+
+  func getDogs() async -> Result<[Dog], any Error> {
+    do {
+      let localDogs = try await dogslocalDataSourceProtocol.getDogs()
+      return .success(localDogs)
+    } catch {
+      return .failure(error)
     }
   }
 }
