@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct DogCardView: View {
-  let dog: Dog
+  let dogUi: DogUi
 
   var body: some View {
     HStack(alignment: .center, spacing: 16) {
-      AsyncImage(url: URL(string: dog.imageUrl)) { image in
+      AsyncImage(url: URL(string: dogUi.imageUrl)) { image in
         image.resizable()
           .aspectRatio(contentMode: .fill)
       } placeholder: {
@@ -16,21 +16,21 @@ struct DogCardView: View {
       .shadow(radius: 4)
 
       VStack(alignment: .leading, spacing: 8) {
-        Text(dog.name)
+        Text(dogUi.name)
           .font(.title3.bold())
 
-        Text(dog.description)
+        Text(dogUi.description)
           .font(.subheadline)
           .foregroundColor(.secondary)
           .lineLimit(3)
 
-        Text("Almost \(dog.age) years")
+        Text(dogUi.ageText)
           .font(.subheadline.weight(.semibold))
           .foregroundColor(.primary)
       }
     }
     .padding()
-    .background(Color(.systemBackground))
+    .background(Color(.white))
     .clipShape(RoundedRectangle(cornerRadius: 16))
     .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
   }

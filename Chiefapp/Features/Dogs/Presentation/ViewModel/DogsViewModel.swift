@@ -2,7 +2,7 @@ import Foundation
 
 @MainActor
 final class DogsViewModel: ObservableObject {
-  @Published var dogs: [Dog] = []
+  @Published var dogUiList: [DogUi] = []
   @Published var isLoading = false
   @Published var errorMessage: String?
 
@@ -20,7 +20,7 @@ final class DogsViewModel: ObservableObject {
 
     switch result {
     case .success(let dogs):
-      self.dogs = dogs
+      self.dogUiList = dogs.toDogUiList()
       self.errorMessage = nil
     case .failure(let error):
       self.errorMessage = error.localizedDescription

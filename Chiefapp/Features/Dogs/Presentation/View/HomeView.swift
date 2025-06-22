@@ -41,8 +41,8 @@ struct HomeView: View {
         } else {
             ScrollView {
                 LazyVStack(spacing: 12) {
-                    ForEach(viewModel.dogs, id: \.id) { dog in
-                        DogCardView(dog: dog)
+                  ForEach(viewModel.dogUiList, id: \.id) { dogUi in
+                    DogCardView(dogUi: dogUi)
                             .padding(.horizontal)
                     }
                 }
