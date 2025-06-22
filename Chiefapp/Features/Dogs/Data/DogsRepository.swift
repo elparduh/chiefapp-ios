@@ -7,7 +7,7 @@ protocol DogsRepositoryProtocol {
 struct DogsRepository: DogsRepositoryProtocol {
   private let dogsRemoteDataSourceProtocol: DogsRemoteDataSourceProtocol
   private let dogslocalDataSourceProtocol: DogsLocalDataSourceProtocol
-  
+
   init(
     dogsRemoteDataSourceProtocol: DogsRemoteDataSourceProtocol,
     dogsLocalDataSourceProtocol: DogsLocalDataSourceProtocol
@@ -15,11 +15,11 @@ struct DogsRepository: DogsRepositoryProtocol {
     self.dogsRemoteDataSourceProtocol = dogsRemoteDataSourceProtocol
     self.dogslocalDataSourceProtocol = dogsLocalDataSourceProtocol
   }
-  
+
   func fetchDogs() async throws -> [Dog] {
     try await dogsRemoteDataSourceProtocol.fetchDogs().toDogList()
   }
-  
+
   func fetchDogs() async -> Result<[Dog], any Error> {
     do {
       let remoteDogs = try await dogsRemoteDataSourceProtocol.fetchDogs().toDogList()
