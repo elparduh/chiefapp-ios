@@ -1,7 +1,11 @@
 import Foundation
+import CoreData
 import SwiftUI
 
 enum ChiefInjector {
+  private static func provideCoreDataContext() -> NSManagedObjectContext {
+    CoreDataStack.shared.context
+  }
 
   private static func provideAPIClient() -> APIClientProtocol {
     APIClient(
@@ -15,8 +19,15 @@ enum ChiefInjector {
     DogsRemoteDataSource(apiClient: provideAPIClient())
   }
 
+  private static func provideDogsLocalDataSource() -> DogsLocalDataSourceProtocol {
+    DogsLocalDataSource(managedContext: provideCoreDataContext())
+  }
+
   private static func provideDogsRepository() -> DogsRepositoryProtocol {
-    DogsRepository(dogsRemoteDataSourceProtocol: provideDogsRemoteDataSource())
+    DogsRepository(
+      dogsRemoteDataSourceProtocol: provideDogsRemoteDataSource(),
+      dogsLocalDataSourceProtocol: provideDogsLocalDataSource()
+    )
   }
 
   private static func provideGetDogsUseCase() -> GetDogsUseCaseProtocol {

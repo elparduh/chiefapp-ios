@@ -12,11 +12,6 @@ struct GetDogsUseCase: GetDogsUseCaseProtocol {
   }
 
   func fetchDogs() async -> Result<[Dog], Error> {
-    do {
-      let dogs = try await dogsRepositoryProtocol.fetchDogs()
-      return .success(dogs)
-    } catch {
-      return .failure(error)
-    }
+    await dogsRepositoryProtocol.fetchDogs()
   }
 }
