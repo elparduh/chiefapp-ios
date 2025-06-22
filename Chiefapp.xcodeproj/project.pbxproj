@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		20332CC12E0734F600F42910 /* DogEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20332CBF2E0734F600F42910 /* DogEntity+CoreDataClass.swift */; };
-		20332CC22E0734F600F42910 /* DogEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20332CC02E0734F600F42910 /* DogEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,9 +16,22 @@
 		20332CC02E0734F600F42910 /* DogEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DogEntity+CoreDataProperties.swift"; path = "Chiefapp/Core/Database/DogEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		20332DA02E088F5000F42910 /* Exceptions for "Chiefapp" folder in "Chiefapp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Core/Database/DogEntity+CoreDataClass.swift",
+			);
+			target = 2006A0642E062F6000382AD7 /* Chiefapp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2006A0672E062F6000382AD7 /* Chiefapp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				20332DA02E088F5000F42910 /* Exceptions for "Chiefapp" folder in "Chiefapp" target */,
+			);
 			path = Chiefapp;
 			sourceTree = "<group>";
 		};
@@ -129,7 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				20332CC12E0734F600F42910 /* DogEntity+CoreDataClass.swift in Sources */,
-				20332CC22E0734F600F42910 /* DogEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
