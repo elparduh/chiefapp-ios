@@ -53,7 +53,7 @@ This folder contains shared foundational components and services that are reused
 
 ### 🔹 Extensions
 - **View+Extensions.swift**  
-  Adds SwiftUI-specific modifiers and helpers. Can be expanded with common UI utilities (e.g., custom placeholders, corner styling).
+  Adds SwiftUI-specific modifiers and helpers. Can be expanded with common UI utilities (e.g., custom placeholders, styling).
 
 ---
 
