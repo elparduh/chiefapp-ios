@@ -81,10 +81,14 @@ Components and services that are reused across the entire app. These utilities s
   - Saves remote data locally if successful.
   - Falls back to local Core Data if the remote call fails.
 
+---
+
 ## 🔹 Domain Layer
 - **Dog.swift** – Pure domain entity with properties like `name`, `description`, `age`, `imageUrl`.
 - **DogsRepositoryProtocol.swift** – Interface defining `fetchDogs() async -> Result<[Dog], Error>`.
 - **GetDogsUseCase.swift** – Application logic for retrieving dogs, delegates to repository.
+
+---
 
 ## 🔹 Presentation Layer
 - **DogsViewModel.swift** –
