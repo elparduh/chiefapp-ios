@@ -52,7 +52,7 @@ Components and services that are reused across the entire app. These utilities s
 ---
 
 ### 🔹 Extensions
-- **View+Extensions.swift**  
+- **+Extensions.swift**  
   Adds SwiftUI-specific modifiers and helpers. Can be expanded with common UI utilities (e.g., custom placeholders, styling).
 
 ---
