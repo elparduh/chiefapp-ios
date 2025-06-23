@@ -4,7 +4,7 @@ struct DogCardView: View {
   let dogUi: DogUi
 
   var body: some View {
-    HStack(alignment: .center, spacing: 16) {
+    HStack(alignment: .center, spacing: .point16) {
       AsyncImage(url: URL(string: dogUi.imageUrl)) { image in
         image
           .resizable()
@@ -12,11 +12,11 @@ struct DogCardView: View {
       } placeholder: {
         Color.gray.opacity(0.3)
       }
-      .frame(width: 100, height: 140)
-      .clipShape(RoundedRectangle(cornerRadius: 12))
-      .shadow(radius: 4)
+      .frame(width: .point100, height: .point140)
+      .clipShape(RoundedRectangle(cornerRadius: .point12))
+      .shadow(radius: .point4)
 
-      VStack(alignment: .leading, spacing: 8) {
+      VStack(alignment: .leading, spacing: .point8) {
         Text(dogUi.name)
           .font(.title3.bold())
 
@@ -32,9 +32,9 @@ struct DogCardView: View {
       .frame(maxWidth: .infinity, alignment: .leading)
     }
     .padding()
-    .frame(maxWidth: .infinity, minHeight: 160, alignment: .leading)
+    .frame(maxWidth: .infinity, minHeight: .point160, alignment: .leading)
     .background(Color(.white))
-    .clipShape(RoundedRectangle(cornerRadius: 16))
-    .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
+    .clipShape(RoundedRectangle(cornerRadius: .point16))
+    .shadow(color: .black.opacity(0.05), radius: .point4, x: .point0, y: .point2)
   }
 }

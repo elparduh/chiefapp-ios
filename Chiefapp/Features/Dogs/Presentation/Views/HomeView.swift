@@ -26,7 +26,7 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
 
     case .failure(let message):
-      VStack(spacing: 16) {
+      VStack(spacing: .point16) {
         Text("Error:")
           .font(.headline)
         Text(message)
@@ -44,9 +44,9 @@ struct HomeView: View {
 
     case .success(let dogs):
       if dogs.isEmpty {
-        VStack(spacing: 16) {
+        VStack(spacing: .point16) {
           Image(systemName: "tray")
-            .font(.system(size: 40))
+            .font(.system(size: .point40))
             .foregroundColor(.gray)
 
           Text("No dogs available to display.")
@@ -65,7 +65,7 @@ struct HomeView: View {
         .padding()
       } else {
         ScrollView {
-          LazyVStack(spacing: 12) {
+          LazyVStack(spacing: .point12) {
             ForEach(dogs, id: \.id) { dogUi in
               DogCardView(dogUi: dogUi)
                 .frame(maxWidth: .infinity)
