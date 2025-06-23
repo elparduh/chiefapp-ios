@@ -66,9 +66,9 @@ This folder contains shared foundational components and services that are reused
 ### 🏗 Architectural Role
 
 - **Reusable Core Services**: Abstracts common infra like networking and persistence.
-- **Loose Coupling**: Promotes testability by injecting dependencies (e.g., APIClientProtocol).
+- **Loose Coupling**: Promotes testability by injecting dependencies.
 - **Single Source of Truth**: API configs and persistent stores are defined once and reused.
-- **Scalable Design**: Easily expandable with additional modules (e.g., LoggingService, Analytics).
+- **Scalable Design**: Easily expandable with additional modules.
 
 ---
 
@@ -140,6 +140,3 @@ This folder contains shared foundational components and services that are reused
 - UI logic isolated from business and infrastructure code.
 
 ---
-
-
-
