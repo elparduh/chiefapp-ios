@@ -10,10 +10,10 @@ struct DogApiResponse: Decodable {
 extension DogApiResponse {
 
   func toDog() -> Dog {
-    Dog(name: dogName ?? "",
-        description: description ?? "",
-        age: age ?? 0,
-        imageUrl: image ?? "")
+    Dog(name: dogName ?? .empty,
+        description: description ?? .empty,
+        age: age ?? .zero,
+        imageUrl: image ?? .empty)
   }
 }
 

@@ -1,9 +1,9 @@
 import Foundation
 
-struct Dog: Identifiable {
+struct DogUi: Identifiable, Equatable {
   let id = UUID()
   let name: String
   let description: String
-  let age: Int
+  let ageText: String
   let imageUrl: String
 }
