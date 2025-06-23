@@ -29,10 +29,10 @@ struct DogCardView: View {
           .font(.subheadline.weight(.semibold))
           .foregroundColor(.primary)
       }
-      .frame(maxWidth: .infinity, alignment: .leading) // 🔧 garantiza que use todo el espacio
+      .frame(maxWidth: .infinity, alignment: .leading)
     }
     .padding()
-    .frame(maxWidth: .infinity, minHeight: 160, alignment: .leading) // 🔧 asegura ancho y altura uniforme
+    .frame(maxWidth: .infinity, minHeight: 160, alignment: .leading)
     .background(Color(.white))
     .clipShape(RoundedRectangle(cornerRadius: 16))
     .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)

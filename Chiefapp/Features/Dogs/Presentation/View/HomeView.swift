@@ -47,7 +47,7 @@ struct HomeView: View {
             LazyVStack(spacing: 12) {
               ForEach(dogs, id: \.id) { dogUi in
                 DogCardView(dogUi: dogUi)
-                  .frame(maxWidth: .infinity) // 🔧 asegura que todos usen el ancho disponible
+                  .frame(maxWidth: .infinity)
                   .padding(.horizontal)
               }
             }
