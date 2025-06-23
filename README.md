@@ -10,6 +10,79 @@ The **Dogs** feature of the **Chief & Co.** app, structured using **Clean Archit
 
 ## 🧠 Component Overview
 
+### 🧩 Core Layer
+
+This folder contains shared foundational components and services that are reused across the entire app. These utilities support infrastructure-level concerns such as **networking**, **Core Data**, **dependency injection**, and **shared extensions**.
+
+---
+
+## 🚀 Module Overview
+
+### 🔹 API (Networking)
+- **APIClientProtocol.swift**  
+  Defines the generic networking interface (e.g., `get<T>()`) used across data sources.
+
+- **APIClient.swift**  
+  Concrete implementation of `APIClientProtocol` using `URLSession`. Supports decoding and URL building.
+
+- **HttpRequestHandler.swift**  
+  Helps construct and debug `URLRequest` objects. Modularizes headers and method logic.
+
+- **APIConfig.swift**  
+  Centralized location for API-related configuration: `baseUrl`, endpoint paths.
+
+---
+
+### 🔹 Core Data
+- **PersistentContainer.swift**  
+  Custom `NSPersistentContainer` subclass that exposes a reusable `backgroundContext` and helper methods like `save()` and `hasChanges()`.
+
+- **CoreDataInjector.swift**  
+  Provides convenient access to the `NSManagedObjectContext` for background operations.
+
+- **NSManagedObjectContext+Extension.swift**  
+  Adds Core Data convenience methods:
+  - `createEntity`
+  - `saveContext`
+  - `fetchManagedObject`
+  - `deleteAll`
+
+---
+
+### 🔹 Dependency Injection
+- **ChiefInjector.swift**  
+  Central enum for building dependencies (e.g., APIClient, Repositories, ViewModels). Composes and injects everything for `HomeView` or others.
+
+---
+
+### 🔹 Extensions
+- **View+Extensions.swift**  
+  Adds SwiftUI-specific modifiers and helpers. Can be expanded with common UI utilities (e.g., custom placeholders, corner styling).
+
+---
+
+### 🔹 Utilities
+- **Constants.swift**  
+  A centralized file for constants used across the app (e.g., image placeholders, spacing, strings).
+
+---
+
+### 🏗 Architectural Role
+
+- **Reusable Core Services**: Abstracts common infra like networking and persistence.
+- **Loose Coupling**: Promotes testability by injecting dependencies (e.g., APIClientProtocol).
+- **Single Source of Truth**: API configs and persistent stores are defined once and reused.
+- **Scalable Design**: Easily expandable with additional modules (e.g., LoggingService, Analytics).
+
+---
+
+### 🔄 Used By
+
+- `Features/Dogs/`: Depends on `APIClient`, `CoreDataInjector`, and `ChiefInjector` from this layer.
+- Future features will reuse Core Data helpers and DI setup from here.
+
+---
+
 ### 🔹 Data Layer
 - **DogApiModel.swift** – Maps the raw API JSON response.
 - **DogsRemoteDataSource.swift** – Handles the remote API call (`GET /dogs`), returns `[DogApiModel]`.
