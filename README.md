@@ -72,13 +72,6 @@ This folder contains shared foundational components and services that are reused
 
 ---
 
-### 🔄 Used By
-
-- `Features/Dogs/`: Depends on `APIClient`, `CoreDataInjector`, and `ChiefInjector` from this layer.
-- Future features will reuse Core Data helpers and DI setup from here.
-
----
-
 ## 🔹 Data Layer
 - **DogApiModel.swift** – Maps the raw API JSON response.
 - **DogsRemoteDataSource.swift** – Handles the remote API call (`GET /dogs`), returns `[DogApiModel]`.
