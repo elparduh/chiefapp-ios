@@ -9,6 +9,7 @@ struct HomeView: View {
       VStack {
         content
       }
+      .background(Color.Palette.lightGrayF8)
       .navigationTitle("Chief & Co.")
       .navigationBarTitleDisplayMode(.inline)
       .task {
