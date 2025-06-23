@@ -135,5 +135,3 @@ Components and services that are reused across the entire app. These utilities s
 - Testability-first design using protocols and dependency injection.
 - Uses `MainActor` and `@Published` for reactive UI updates.
 - UI logic isolated from business and infrastructure code.
-
----
