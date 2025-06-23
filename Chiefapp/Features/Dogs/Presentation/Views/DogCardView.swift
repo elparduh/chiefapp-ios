@@ -19,15 +19,15 @@ struct DogCardView: View {
       VStack(alignment: .leading, spacing: .point8) {
         Text(dogUi.name)
           .font(.title3.bold())
-
+          .foregroundColor(.Palette.gray33)
         Text(dogUi.description)
           .font(.subheadline)
-          .foregroundColor(.secondary)
+          .foregroundColor(.Palette.gray66)
           .lineLimit(.three)
 
         Text(dogUi.ageText)
           .font(.subheadline.weight(.semibold))
-          .foregroundColor(.primary)
+          .foregroundColor(.Palette.gray33)
       }
       .frame(maxWidth: .infinity, alignment: .leading)
     }
