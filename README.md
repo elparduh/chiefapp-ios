@@ -47,7 +47,7 @@ This folder contains shared foundational components and services that are reused
 
 ### 🔹 Dependency Injection
 - **ChiefInjector.swift**  
-  Central enum for building dependencies (e.g., APIClient, Repositories, ViewModels). Composes and injects everything for `HomeView` or others.
+  Central enum for building dependencies (e.g., APIClient, Repositories, ViewModels). Injects everything for `HomeView` or others.
 
 ---
 
