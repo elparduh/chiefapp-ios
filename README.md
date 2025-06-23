@@ -1,6 +1,10 @@
 # 🐶 Dogs Feature
 
-This folder contains everything related to the **Dogs** feature module of the **Chief & Co.** app, structured using **Clean Architecture** principles with three layers: **Data**, **Domain**, and **Presentation**.
+The **Dogs** feature module of the **Chief & Co.** app, structured using **Clean Architecture** principles with three layers: **Data**, **Domain**, and **Presentation**.
+
+|  Home/Dogs  |  
+|---|
+| <img src="https://github.com/user-attachments/assets/cb5477e5-22bc-45be-8012-bad42810c78f" width="260"> |
 
 ---
 
