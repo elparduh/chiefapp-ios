@@ -10,7 +10,7 @@ The **Dogs** feature of the **Chief & Co.** app, structured using **Clean Archit
 
 ### 🧩 Core Layer
 
-Foundational components and services that are reused across the entire app. These utilities support infrastructure-level concerns such as **networking**, **Core Data**, **dependency injection**, and **shared extensions**.
+Components and services that are reused across the entire app. These utilities support infrastructure-level concerns such as **networking**, **Core Data**, **dependency injection**, and **shared extensions**.
 
 ---
 
