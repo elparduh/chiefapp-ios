@@ -72,7 +72,5 @@ The **Dogs** feature of the **Chief & Co.** app, structured using **Clean Archit
 
 ---
 
-This README summarizes the entire feature module and serves as a guide for contribution, testing, or further refactoring. Feel free to extend it with setup instructions or testing guides.
-
 
 
