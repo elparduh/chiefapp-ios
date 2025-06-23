@@ -73,6 +73,7 @@ struct HomeView: View {
             }
           }
           .padding(.top)
+          .background(Color.Palette.lightGrayF8)
         }
       }
     }
