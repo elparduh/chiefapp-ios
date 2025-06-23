@@ -37,10 +37,10 @@ struct DogsLocalDataSource: DogsLocalDataSourceProtocol {
 
       return result.map {
         Dog(
-          name: $0.name ?? "",
-          description: $0.dogDescription ?? "",
+          name: $0.name ?? .empty,
+          description: $0.dogDescription ?? .empty,
           age: Int($0.age),
-          imageUrl: $0.imageUrl ?? ""
+          imageUrl: $0.imageUrl ?? .empty
         )
       }
     }
