@@ -10,7 +10,7 @@ struct DogCardView: View {
           .resizable()
           .aspectRatio(contentMode: .fill)
       } placeholder: {
-        Color.gray.opacity(.point0_3)
+        Color.Palette.gray66.opacity(.point0_3)
       }
       .frame(width: .point100, height: .point140)
       .clipShape(RoundedRectangle(cornerRadius: .point12))
@@ -33,7 +33,7 @@ struct DogCardView: View {
     }
     .padding()
     .frame(maxWidth: .infinity, minHeight: .point160, alignment: .leading)
-    .background(Color(.white))
+    .background(Color.white)
     .clipShape(RoundedRectangle(cornerRadius: .point16))
     .shadow(color: .black.opacity(.point0_05), radius: .point4, x: .point0, y: .point2)
   }

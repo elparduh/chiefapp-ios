@@ -48,11 +48,11 @@ struct HomeView: View {
         VStack(spacing: .point16) {
           Image(systemName: "tray")
             .font(.system(size: .point40))
-            .foregroundColor(.gray)
+            .foregroundColor(Color.Palette.gray66)
 
           Text("No dogs available to display.")
             .font(.headline)
-            .foregroundColor(.secondary)
+            .foregroundColor(Color.Palette.gray33)
 
           Button("Retry") {
             Task {
