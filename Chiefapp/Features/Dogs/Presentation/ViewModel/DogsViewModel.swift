@@ -2,9 +2,7 @@ import Foundation
 
 @MainActor
 final class DogsViewModel: ObservableObject {
-  @Published var dogUiList: [DogUi] = []
-  @Published var isLoading = false
-  @Published var errorMessage: String?
+  @Published var uiState: UIState<[DogUi]> = .initial
 
   private let getDogsUseCase: GetDogsUseCaseProtocol
 
@@ -13,17 +11,14 @@ final class DogsViewModel: ObservableObject {
   }
 
   func loadDogs() async {
-    isLoading = true
-    defer { isLoading = false }
+    uiState = .loading
 
     let result = await getDogsUseCase.fetchDogs()
-
     switch result {
     case .success(let dogs):
-      self.dogUiList = dogs.toDogUiList()
-      self.errorMessage = nil
+      uiState = .success(dogs.toDogUiList())
     case .failure(let error):
-      self.errorMessage = error.localizedDescription
+      uiState = .failure(error.localizedDescription)
     }
   }
 }

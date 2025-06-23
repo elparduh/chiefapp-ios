@@ -1,5 +1,5 @@
+import SwiftUICore
 import SwiftUI
-
 struct HomeView: View {
     @ObservedObject var viewModel: DogsViewModel
 
@@ -18,15 +18,17 @@ struct HomeView: View {
 
     @ViewBuilder
     private var content: some View {
-        if viewModel.isLoading {
+        switch viewModel.uiState {
+        case .initial, .loading:
             ProgressView("Loading dogs...")
                 .progressViewStyle(CircularProgressViewStyle())
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-        } else if let errorMessage = viewModel.errorMessage {
+
+        case .failure(let message):
             VStack(spacing: 16) {
                 Text("Error:")
                     .font(.headline)
-                Text(errorMessage)
+                Text(message)
                     .multilineTextAlignment(.center)
                 Button("Retry") {
                     Task {
@@ -38,11 +40,12 @@ struct HomeView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-        } else {
+
+        case .success(let dogs):
             ScrollView {
                 LazyVStack(spacing: 12) {
-                  ForEach(viewModel.dogUiList, id: \.id) { dogUi in
-                    DogCardView(dogUi: dogUi)
+                    ForEach(dogs, id: \.id) { dogUi in
+                        DogCardView(dogUi: dogUi)
                             .padding(.horizontal)
                     }
                 }
