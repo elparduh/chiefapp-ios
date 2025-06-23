@@ -1,6 +1,6 @@
 # 🐶 Dogs Feature
 
-The **Dogs** feature module of the **Chief & Co.** app, structured using **Clean Architecture** principles with three layers: **Data**, **Domain**, and **Presentation**.
+The **Dogs** feature of the **Chief & Co.** app, structured using **Clean Architecture** principles with three layers: **Data**, **Domain**, and **Presentation**.
 
 |  Home/Dogs  |  
 |---|
