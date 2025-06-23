@@ -8,15 +8,11 @@ The **Dogs** feature of the **Chief & Co.** app, structured using **Clean Archit
 
 ---
 
-## 🧠 Component Overview
-
-### 🧩 Core Layer
+## 🧩 Core Layer
 
 This folder contains shared foundational components and services that are reused across the entire app. These utilities support infrastructure-level concerns such as **networking**, **Core Data**, **dependency injection**, and **shared extensions**.
 
 ---
-
-## 🚀 Module Overview
 
 ### 🔹 API (Networking)
 - **APIClientProtocol.swift**  
@@ -83,7 +79,7 @@ This folder contains shared foundational components and services that are reused
 
 ---
 
-### 🔹 Data Layer
+## 🔹 Data Layer
 - **DogApiModel.swift** – Maps the raw API JSON response.
 - **DogsRemoteDataSource.swift** – Handles the remote API call (`GET /dogs`), returns `[DogApiModel]`.
 - **DogsLocalDataSourceCoreData.swift** – Handles local persistence using Core Data.
@@ -92,12 +88,12 @@ This folder contains shared foundational components and services that are reused
   - Saves remote data locally if successful.
   - Falls back to local Core Data if the remote call fails.
 
-### 🔹 Domain Layer
+## 🔹 Domain Layer
 - **Dog.swift** – Pure domain entity with properties like `name`, `description`, `age`, `imageUrl`.
 - **DogsRepositoryProtocol.swift** – Interface defining `fetchDogs() async -> Result<[Dog], Error>`.
 - **GetDogsUseCase.swift** – Application logic for retrieving dogs, delegates to repository.
 
-### 🔹 Presentation Layer
+## 🔹 Presentation Layer
 - **DogsViewModel.swift** –
   - Exposes `@Published` properties: `[DogUI]`, `isLoading`, and `errorMessage`.
   - Calls the use case to load data and maps domain models to UI models.
