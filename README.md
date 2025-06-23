@@ -8,9 +8,9 @@ The **Dogs** feature of the **Chief & Co.** app, structured using **Clean Archit
 
 ---
 
-## 🧩 Core Layer
+### 🧩 Core Layer
 
-This folder contains shared foundational components and services that are reused across the entire app. These utilities support infrastructure-level concerns such as **networking**, **Core Data**, **dependency injection**, and **shared extensions**.
+Foundational components and services that are reused across the entire app. These utilities support infrastructure-level concerns such as **networking**, **Core Data**, **dependency injection**, and **shared extensions**.
 
 ---
 
