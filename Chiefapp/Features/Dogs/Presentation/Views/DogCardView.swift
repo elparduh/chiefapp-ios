@@ -23,7 +23,7 @@ struct DogCardView: View {
         Text(dogUi.description)
           .font(.subheadline)
           .foregroundColor(.secondary)
-          .lineLimit(3)
+          .lineLimit(.three)
 
         Text(dogUi.ageText)
           .font(.subheadline.weight(.semibold))
