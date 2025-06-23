@@ -6,7 +6,8 @@ struct DogCardView: View {
   var body: some View {
     HStack(alignment: .center, spacing: 16) {
       AsyncImage(url: URL(string: dogUi.imageUrl)) { image in
-        image.resizable()
+        image
+          .resizable()
           .aspectRatio(contentMode: .fill)
       } placeholder: {
         Color.gray.opacity(0.3)
@@ -28,8 +29,10 @@ struct DogCardView: View {
           .font(.subheadline.weight(.semibold))
           .foregroundColor(.primary)
       }
+      .frame(maxWidth: .infinity, alignment: .leading) // 🔧 garantiza que use todo el espacio
     }
     .padding()
+    .frame(maxWidth: .infinity, minHeight: 160, alignment: .leading) // 🔧 asegura ancho y altura uniforme
     .background(Color(.white))
     .clipShape(RoundedRectangle(cornerRadius: 16))
     .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)

@@ -1,5 +1,6 @@
 import SwiftUICore
 import SwiftUI
+
 struct HomeView: View {
     @ObservedObject var viewModel: DogsViewModel
 
@@ -42,15 +43,16 @@ struct HomeView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
         case .success(let dogs):
-            ScrollView {
-                LazyVStack(spacing: 12) {
-                    ForEach(dogs, id: \.id) { dogUi in
-                        DogCardView(dogUi: dogUi)
-                            .padding(.horizontal)
-                    }
-                }
-                .padding(.top)
+          ScrollView {
+            LazyVStack(spacing: 12) {
+              ForEach(dogs, id: \.id) { dogUi in
+                DogCardView(dogUi: dogUi)
+                  .frame(maxWidth: .infinity) // 🔧 asegura que todos usen el ancho disponible
+                  .padding(.horizontal)
+              }
             }
+            .padding(.top)
+          }
         }
     }
 }
